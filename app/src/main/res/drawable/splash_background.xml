@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Capa 1: Color de fondo (usa el color principal de tu tema) -->
+    <item android:drawable="@color/purple_500"/> <!-- Cambia purple_500 por tu color -->
+
+    <!-- Capa 2: Logo centrado -->
+    <item android:gravity="center">
+        <bitmap
+            android:src="@mipmap/ic_launcher"
+        android:gravity="center"/>
+    </item>
+</layer-list>

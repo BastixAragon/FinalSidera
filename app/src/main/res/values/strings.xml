@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sidera_APP</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="login_title">Sidera</string>
+    <string name="hint_username">Usuario</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="button_login">Ingresar</string>
+    <string name="login_error">Usuario o contraseña incorrectos</string>
+</resources>

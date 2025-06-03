@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Estrella grande central -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M100,20 L115,70 L165,70 L125,100 L140,150 L100,120 L60,150 L75,100 L35,70 L85,70 Z"/>
+
+    <!-- Constelación de estrellas pequeñas -->
+    <group>
+        <!-- Cuadrante superior izquierdo -->
+        <path android:pathData="M30,30 L33,35 L38,35 L35,40 L38,45 L30,42 L22,45 L25,40 L22,35 L28,35 Z"
+            android:fillColor="#FFFFFF"/>
+        <path android:pathData="M10,60 L12,63 L15,63 L13,66 L15,69 L10,67 L5,69 L7,66 L5,63 L9,63 Z"
+            android:fillColor="#FFFFFF"/>
+
+        <!-- Cuadrante superior derecho -->
+        <path android:pathData="M160,40 L163,45 L168,45 L165,50 L168,55 L160,52 L152,55 L155,50 L152,45 L158,45 Z"
+            android:fillColor="#FFFFFF"/>
+        <path android:pathData="M180,20 L182,22 L185,22 L183,25 L185,28 L180,26 L175,28 L177,25 L175,22 L179,22 Z"
+            android:fillColor="#FFFFFF"/>
+
+        <!-- Cuadrante inferior izquierdo -->
+        <path android:pathData="M40,150 L42,155 L47,155 L45,160 L47,165 L40,162 L33,165 L35,160 L33,155 L38,155 Z"
+            android:fillColor="#FFFFFF"/>
+        <path android:pathData="M20,180 L22,182 L25,182 L23,185 L25,188 L20,186 L15,188 L17,185 L15,182 L19,182 Z"
+            android:fillColor="#FFFFFF"/>
+
+        <!-- Cuadrante inferior derecho -->
+        <path android:pathData="M150,130 L152,135 L157,135 L155,140 L157,145 L150,142 L143,145 L145,140 L143,135 L148,135 Z"
+            android:fillColor="#FFFFFF"/>
+        <path android:pathData="M170,160 L172,163 L175,163 L173,166 L175,169 L170,167 L165,169 L167,166 L165,163 L169,163 Z"
+            android:fillColor="#FFFFFF"/>
+    </group>
+
+    <!-- Estrellas aleatorias adicionales -->
+    <path android:pathData="M70,50 L71,52 L73,52 L72,54 L73,56 L70,55 L67,56 L68,54 L67,52 L69,52 Z"
+        android:fillColor="#FFFFFF" android:fillAlpha="0.7"/>
+    <path android:pathData="M130,110 L131,112 L133,112 L132,114 L133,116 L130,115 L127,116 L128,114 L127,112 L129,112 Z"
+        android:fillColor="#FFFFFF" android:fillAlpha="0.7"/>
+    <path android:pathData="M90,170 L91,172 L93,172 L92,174 L93,176 L90,175 L87,176 L88,174 L87,172 L89,172 Z"
+        android:fillColor="#FFFFFF" android:fillAlpha="0.6"/>
+</vector>

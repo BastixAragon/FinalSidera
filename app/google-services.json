@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "14988291308",
+    "project_id": "sidera-app",
+    "storage_bucket": "sidera-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14988291308:android:761b2a48f25347f2cb09c9",
+        "android_client_info": {
+          "package_name": "com.example.sidera_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBnqRRUhkmN3CTvExyFuRRZQriANCOQiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

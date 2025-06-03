@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema principal de la aplicación -->
+    <style name="Theme.Sidera_APP" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Colores principales -->
+        <item name="android:statusBarColor">@color/space_blue</item>
+        <item name="android:navigationBarColor">@color/space_blue</item>
+        <item name="colorPrimary">@color/space_blue</item>
+        <item name="colorPrimaryVariant">@color/nebula_purple</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+
+        <!-- Configuración para pantalla completa -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
+
+    <!-- Tema para el Splash Screen -->
+    <style name="Theme.Sidera_APP.Splash" parent="Theme.Sidera_APP">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Tema específico para LoginActivity -->
+    <style name="Theme.Sidera_APP.Login" parent="Theme.Sidera_APP">
+        <item name="android:windowBackground">@drawable/space_bg</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+</resources>
