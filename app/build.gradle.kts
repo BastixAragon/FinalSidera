@@ -17,6 +17,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "NASA_API_KEY", "\"79D6KcO7VjadT5KEZVVKMSSBpv9RKPU0NoZiWInh\"")
     }
 
 
@@ -50,6 +51,8 @@ dependencies {
     implementation(libs.gson.converter)
     implementation(libs.retrofit)
     implementation(libs.coil)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
     coreLibraryDesugaring(libs.desugar.jdk.libs)
