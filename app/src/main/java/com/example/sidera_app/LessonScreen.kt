@@ -26,15 +26,25 @@ fun LessonScreen() {
     var datosOriginales by remember { mutableStateOf<List<ApodResponse>>(emptyList()) }
     var datosTraducidos by remember { mutableStateOf<Map<Int, ApodResponse>>(emptyMap()) }
     var cargando by remember { mutableStateOf(true) }
+    var errorMessage by remember { mutableStateOf<String?>(null) }
     val coroutineScope = rememberCoroutineScope()
 
     // Carga inicial
     LaunchedEffect(Unit) {
         try {
-            val respuesta = NasaApi.retrofit.getApods()
-            datosOriginales = respuesta
+            cargando = true
+            errorMessage = null
+            val respuesta = NasaApi.service.getApods()
+            val filtradas = respuesta.filter { !it.displayUrl.isNullOrBlank() }
+
+            if (filtradas.isEmpty()) {
+                errorMessage = "No se recibieron imágenes disponibles desde la NASA."
+            }
+
+            datosOriginales = filtradas
         } catch (e: Exception) {
             Log.e("LessonScreen", "Error al cargar datos: ${e.message}")
+            errorMessage = "No se pudieron descargar los datos de la NASA."
         } finally {
             cargando = false
         }
@@ -66,14 +76,31 @@ fun LessonScreen() {
                     textAlign = TextAlign.Center
                 )
 
-                AsyncImage(
-                    model = actual.url,
-                    contentDescription = actual.title,
-                    modifier = Modifier
-                        .height(300.dp)
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(16.dp))
-                )
+                val imagen = actual.displayUrl
+                if (!imagen.isNullOrBlank()) {
+                    AsyncImage(
+                        model = imagen,
+                        contentDescription = actual.title,
+                        modifier = Modifier
+                            .height(300.dp)
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(16.dp))
+                    )
+                } else {
+                    Box(
+                        modifier = Modifier
+                            .height(300.dp)
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(16.dp)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "Contenido multimedia no disponible",
+                            color = Color.White,
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                }
 
                 Spacer(modifier = Modifier.height(16.dp))
 
@@ -128,10 +155,20 @@ fun LessonScreen() {
             TextButton(onClick = { /* Acción futura */ }) {
                 Text("Saber más")
             }
+
+            errorMessage?.let { mensaje ->
+                Spacer(modifier = Modifier.height(12.dp))
+                Text(
+                    text = mensaje,
+                    color = Color(0xFFFFC107),
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
         }
     } else {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Text("No se pudieron cargar los datos.")
+            Text(errorMessage ?: "No se pudieron cargar los datos.")
         }
     }
 }
